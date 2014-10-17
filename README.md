@@ -8,6 +8,21 @@ latest version of Rhino in the context of a ScriptEngine in Java 6/7. In
 Java 8 Nashorn is used as default ScriptEngine for JavaScript.
 
 
+Using
+-----
+
+Include the rhino-script-engine in your Maven POM.
+
+```
+<dependency>
+  <groupId>de.christophkraemer</groupId>
+  <artifactId>rhino-script-engine</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+
+The ScriptEngine should be automatically found by the ScriptEngineFactory.
+
 License
 -------
 

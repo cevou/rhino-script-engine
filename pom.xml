@@ -6,7 +6,16 @@
 
     <groupId>de.christophkraemer</groupId>
     <artifactId>rhino-script-engine</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
+
+    <name>RhinoScriptEngine</name>
+    <description>
+        This is a copy of the RhinoScriptEngine which is embedded in Java 6/7. There
+        an old version of Rhino (1.7R3) is used. The code in this repository uses the
+        latest rhino version. This is only needed if you want to use the latest version
+        of Rhino in the context of a ScriptEngine in Java 6/7.
+    </description>
+    <url>https://github.com/cevou/rhino-script-engine</url>
 
     <licenses>
         <license>
@@ -16,9 +25,29 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Christoph Kraemer</name>
+            <email>mail@christophkraemer.de</email>
+        </developer>
+    </developers>
+
     <scm>
-        <url>https://github.com/cevou/rhino-script-engine</url>
+        <connection>scm:git:git@github.com:cevou/rhino-script-engine.git</connection>
+        <developerConnection>scm:git:git@github.com:cevou/rhino-script-engine.git</developerConnection>
+        <url>git@github.com:cevou/rhino-script-engine.git</url>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>SonatypeRelease</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>SonatypeSnapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,6 +70,46 @@
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
