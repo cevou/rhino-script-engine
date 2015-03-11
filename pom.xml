@@ -6,7 +6,7 @@
 
     <groupId>de.christophkraemer</groupId>
     <artifactId>rhino-script-engine</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 
     <name>RhinoScriptEngine</name>
     <description>
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>org.mozilla</groupId>
             <artifactId>rhino</artifactId>
-            <version>1.7R4</version>
+            <version>1.7R5</version>
         </dependency>
     </dependencies>
 

@@ -17,7 +17,7 @@ Include the rhino-script-engine in your Maven POM.
 <dependency>
   <groupId>de.christophkraemer</groupId>
   <artifactId>rhino-script-engine</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
