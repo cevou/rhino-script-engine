@@ -55,7 +55,7 @@ public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
         } else if (key.equals(ScriptEngine.ENGINE)) {
             return "Mozilla Rhino";
         } else if (key.equals(ScriptEngine.ENGINE_VERSION)) {
-            return "1.7 release 4 PRERELEASE";
+            return "1.7 release 5 PRERELEASE";
         } else if (key.equals(ScriptEngine.LANGUAGE)) {
             return "ECMAScript";
         } else if (key.equals(ScriptEngine.LANGUAGE_VERSION)) {
@@ -133,7 +133,7 @@ public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
         names = new ArrayList<String>(6);
         names.add("js");
         names.add("rhino");
-        names.add("rhino17R4");
+        names.add("rhino17R5");
         names.add("JavaScript");
         names.add("javascript");
         names.add("ECMAScript");
