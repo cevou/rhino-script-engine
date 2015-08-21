@@ -32,6 +32,13 @@ import javax.script.ScriptContext;
 import javax.script.SimpleScriptContext;
 import java.security.AccessControlContext;
 
+/**
+ * This class serves as top level scope for Rhino. This class adds
+ * 3 top level functions (bindings, scope, sync) and two constructors
+ * (JSAdapter, JavaAdapter).
+ *
+ * @author (Original) A. Sundararajan
+ */
 public final class RhinoTopLevel extends ImporterTopLevel {
     private RhinoScriptEngine engine;
 

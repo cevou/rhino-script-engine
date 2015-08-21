@@ -32,6 +32,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Factory to create RhinoScriptEngine
+ *
+ * @author (Original) Mike Grogan
+ */
 public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
 
     public RhinoScriptEngineFactory() {

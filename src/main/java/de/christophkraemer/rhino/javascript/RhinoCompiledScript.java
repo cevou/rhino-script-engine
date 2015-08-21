@@ -32,7 +32,13 @@ import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
-final class RhinoCompiledScript extends CompiledScript {
+/**
+ * Represents compiled JavaScript code.
+ *
+ * @author Mike Grogan
+ * @since 1.6
+ */
+ final class RhinoCompiledScript extends CompiledScript {
 
     private RhinoScriptEngine engine;
     private Script script;
