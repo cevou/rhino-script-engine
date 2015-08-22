@@ -37,7 +37,14 @@ import java.security.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class RhinoScriptEngine extends AbstractScriptEngine
+/**
+ * Implementation of <code>ScriptEngine</code> using the Mozilla Rhino
+ * interpreter.
+ *
+ * @author (Original) Mike Grogan
+ * @author (Original) A. Sundararajan
+ */
+ public final class RhinoScriptEngine extends AbstractScriptEngine
         implements Invocable, Compilable {
 
     private static final boolean DEBUG = false;

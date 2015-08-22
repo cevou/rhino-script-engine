@@ -29,12 +29,25 @@ import org.mozilla.javascript.*;
 
 import javax.script.Bindings;
 import javax.script.ScriptContext;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * ExternalScriptable is an implementation of Scriptable
+ * backed by a JSR 223 ScriptContext instance.
+ *
+ * @author (Original) Mike Grogan
+ * @author (Original) A. Sundararajan
+ * @author ibrahim Chaehoi
+ */
 final class ExternalScriptable implements Scriptable {
-    /* Underlying ScriptContext that we use to store
+	
+	/** The Mozilla Rhino javascript package name */
+    private static final String RHINO_JS_PACKAGE_NAME = "org.mozilla.javascript";
+
+	/* Underlying ScriptContext that we use to store
      * named variables of this scope.
      */
     private ScriptContext context;
@@ -104,7 +117,11 @@ final class ExternalScriptable implements Scriptable {
                 int scope = context.getAttributesScope(name);
                 if (scope != -1) {
                     Object value = context.getAttribute(name, scope);
-                    return Context.javaToJS(value, this);
+                    if(value.getClass().getPackage().getName().startsWith(RHINO_JS_PACKAGE_NAME)){
+                    	return value;
+                    }else{
+                        return Context.javaToJS(value, this);
+                    }
                 } else {
                     return NOT_FOUND;
                 }

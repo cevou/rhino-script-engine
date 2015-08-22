@@ -29,6 +29,12 @@ import javax.script.*;
 import java.lang.reflect.*;
 import java.security.*;
 
+/**
+ * java.lang.reflect.Proxy based interface implementor. This is meant to be used
+ * to implement Invocable.getInterface.
+ *
+ * @author Mike Grogan
+ */
 public class InterfaceImplementor {
 
     private Invocable engine;

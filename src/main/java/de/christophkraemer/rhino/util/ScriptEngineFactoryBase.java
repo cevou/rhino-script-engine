@@ -28,6 +28,11 @@ package de.christophkraemer.rhino.util;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 
+/*
+ * Abstract super class for factory implementations.
+ *
+ * @author (Original) Mike Grogan
+ */
 public abstract class ScriptEngineFactoryBase implements ScriptEngineFactory {
 
     public String getName() {

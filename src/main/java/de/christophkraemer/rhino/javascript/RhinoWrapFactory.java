@@ -32,6 +32,18 @@ import java.lang.reflect.Modifier;
 
 import static sun.security.util.SecurityConstants.GET_CLASSLOADER_PERMISSION;
 
+/**
+ * This wrap factory is used for security reasons. JSR 223 script
+ * engine interface and JavaScript engine classes are run as bootstrap
+ * classes. For example, java.lang.Class.forName method (when called without
+ * class loader) uses caller's class loader. This may be exploited by script
+ * authors to access classes otherwise not accessible. For example,
+ * classes in sun.* namespace are normally not accessible to untrusted
+ * code and hence should not be accessible to JavaScript run from
+ * untrusted code.
+ *
+ * @author (Original) A. Sundararajan
+ */
 final class RhinoWrapFactory extends WrapFactory {
     private static RhinoWrapFactory theInstance;
 

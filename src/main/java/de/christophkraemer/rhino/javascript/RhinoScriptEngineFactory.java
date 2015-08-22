@@ -32,6 +32,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Factory to create RhinoScriptEngine
+ *
+ * @author (Original) Mike Grogan
+ */
 public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
 
     public RhinoScriptEngineFactory() {
@@ -55,7 +60,7 @@ public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
         } else if (key.equals(ScriptEngine.ENGINE)) {
             return "Mozilla Rhino";
         } else if (key.equals(ScriptEngine.ENGINE_VERSION)) {
-            return "1.7 release 5 PRERELEASE";
+            return "1.7.x";
         } else if (key.equals(ScriptEngine.LANGUAGE)) {
             return "ECMAScript";
         } else if (key.equals(ScriptEngine.LANGUAGE_VERSION)) {
@@ -134,6 +139,8 @@ public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
         names.add("js");
         names.add("rhino");
         names.add("rhino17R5");
+        names.add("mozilla.rhino");
+        names.add("de.christophkraemer.rhino");
         names.add("JavaScript");
         names.add("javascript");
         names.add("ECMAScript");
