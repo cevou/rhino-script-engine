@@ -138,7 +138,9 @@ public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
         names = new ArrayList<String>(6);
         names.add("js");
         names.add("rhino");
+        names.add("rhino17R5");
         names.add("mozilla.rhino");
+        names.add("de.christophkraemer.rhino");
         names.add("JavaScript");
         names.add("javascript");
         names.add("ECMAScript");
